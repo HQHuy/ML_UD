@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-3">
+    <h3>Danh sách file đã tải lên:</h3>
+    <ul class="list-unstyled">
+        {% for file in uploaded_files %}
+        <li class="d-flex align-items-center mb-3">
+            <i class="fa-duotone fa-solid fa-file fa-2xl">&nbsp</i>
+            <div class="me-auto">
+                <strong>{{ file.filename }}</strong><br>
+                <small>Thời gian tải lên: {{ file.upload_time.strftime('%d/%m/%Y %H:%M:%S') }}</small>
+            </div>
+            <form action="{{ url_for('delete_file', filename=file.filename) }}" method="POST">
+                <button type="submit" class="btn btn-danger ms-2">Xóa</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
