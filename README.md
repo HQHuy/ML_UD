@@ -1,4 +1,4 @@
-<img width="1470" alt="Screenshot 2024-09-22 at 11 18 11 PM" src="https://github.com/user-attachments/assets/3181cc24-b081-4094-8810-8458479290f5"># ML_UD
+# ML_UD
 Học Máy Và Ứng Dụng VLU
 ## Huỳnh Quang Huy
 ## 2274802010306
