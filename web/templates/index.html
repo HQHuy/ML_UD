@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}Emotion Prediction{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Predict Emotions</h5>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="textInput" class="form-label">Enter Text</label>
+                        <input type="text" class="form-control" id="textInput" name="user_text" placeholder="Type your text here..." required>
+                    </div>
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="font-monospace btn btn-primary" type="submit">Predict 🧐</button>
+                    </div>
+                </form>
+                
+                {% if prediction_bernoulli and prediction_multinomial %}
+                <div class="mt-4">
+                    <p class="font-monospace fw-bold">Bernoulli Naive Bayes Prediction:</p>
+                    <p class="font-monospace">{{ prediction_bernoulli }}</p>
+                    
+                    <p class="font-monospace fw-bold">Multinomial Naive Bayes Prediction:</p>
+                    <p class="font-monospace">{{ prediction_multinomial }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

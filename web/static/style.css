@@ -1,0 +1,21 @@
+html, body {
+    height: 100%;
+}
+/* Flexbox container that allows the content to grow and push the footer down */
+body {
+    display: flex;
+    flex-direction: column;
+}
+/* Main content should take up available space, footer stays at the bottom */
+.content {
+    flex: 1;
+}
+footer {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+.active {
+    font-weight: bold;
+}

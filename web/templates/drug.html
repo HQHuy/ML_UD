@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}Drug Prediction{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="font-monospace fw-bold card-title">Predict Drug Type</h5>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="age" class="font-monospace form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="mb-3">
+                <label for="sex" class="font-monospace form-label">Sex</label>
+                <select class="form-control font-monospace" id="sex" name="sex" required>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="bp" class="font-monospace form-label">Blood Pressure</label>
+                <select class="font-monospace form-control" id="bp" name="bp" required>
+                    <option value="LOW">Low</option>
+                    <option value="NORMAL">Normal</option>
+                    <option value="HIGH">High</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="font-monospace cholesterol" class="form-label">Cholesterol</label>
+                <select class="font-monospace form-control" id="cholesterol" name="cholesterol" required>
+                    <option value="NORMAL">Normal</option>
+                    <option value="HIGH">High</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="na_to_k" class="font-monospace form-label">Sodium to Potassium Ratio</label>
+                <input type="number" step="any" class="form-control" id="na_to_k" name="na_to_k" required>
+            </div>
+            <button class="font-monospace btn btn-primary" type="submit">Predict Drug</button>
+        </form>
+
+        {% if drug_prediction %}
+        <div class="mt-4">
+            <p class="font-monospace fw-bold">Predicted Drug:</p>
+            <p class="font-monospace">{{ drug_prediction }}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
